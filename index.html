@@ -28,9 +28,10 @@
             
             font-family: 'Montserrat', sans-serif;
             color: var(--cor-verde);
+            min-height: 100vh;
         }
 
-        /* Classe que garante a altura total da tela e centraliza o conteúdo */
+        /* Classe para centralizar o conteúdo em qualquer tela */
         .full-height-center {
             min-height: 100vh;
             display: flex;
@@ -42,17 +43,19 @@
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
             max-width: 90%;
             height: auto;
-            margin-bottom: 2rem; /* Margem padrão para mobile */
+            margin-bottom: 2rem;
         }
 
         .slogan {
-            font-size: 1.3rem; /* Tamanho base para mobile */
+            /* Tamanho padrão para telas XS (<576px) e SM (>=576px) */
+            font-size: 1.3rem; 
             font-weight: bold;
             margin-bottom: 1.5rem;
         }
 
         .whatsapp-button {
-            padding: 14px 28px; /* Tamanho base para mobile */
+            /* Tamanho padrão para telas XS e SM */
+            padding: 14px 28px;
             font-size: 1.1rem;
 
             background-color: var(--cor-verde-botao);
@@ -77,19 +80,39 @@
             font-size: 1.5rem;
             vertical-align: middle;
         }
-
-        /* Médio e grande (tablet e desktop) */
+        
+        /* Estilos específicos para telas MD (>=768px) */
         @media (min-width: 768px) {
             .slogan {
-                font-size: 1.5rem; /* Aumenta um pouco em tablets e desktops */
+                font-size: 1.5rem;
             }
         }
 
-        /* Grande (desktop) */
+        /* Estilos específicos para telas LG (>=992px) */
         @media (min-width: 992px) {
             .hero-image {
                 max-height: 80vh; 
                 margin-bottom: 0;
+            }
+            .slogan {
+                font-size: 1.6rem;
+            }
+        }
+        
+        /* Estilos específicos para telas XL (>=1200px) */
+        @media (min-width: 1200px) {
+            .slogan {
+                font-size: 1.7rem;
+            }
+        }
+        
+        /* Estilos específicos para telas XXL (>=1400px) */
+        @media (min-width: 1400px) {
+            .slogan {
+                font-size: 1.8rem;
+            }
+            .whatsapp-button {
+                font-size: 1.2rem;
             }
         }
     </style>
