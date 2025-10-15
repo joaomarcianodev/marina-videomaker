@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -36,21 +36,24 @@
         
         .hero-image {
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-            max-height: 80vh;
+            max-height: 90vh; /* Permitir que a imagem seja um pouco maior */
         }
 
         .slogan {
-            font-size: 1.5rem;
+            /* Tamanho base para celulares (Extra Small - xs) */
+            font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 1.5rem;
         }
 
         .whatsapp-button {
+            /* Tamanho base para celulares (Extra Small - xs) */
+            padding: 14px 28px;
+            font-size: 1.1rem;
+
             background-color: var(--cor-verde-botao);
             border: none;
             border-radius: 50px;
-            padding: 12px 30px;
-            font-size: 1.1rem;
             font-weight: bold;
             color: white;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -71,18 +74,55 @@
             vertical-align: middle;
         }
 
+        /* --- MELHORIAS DE RESPONSIVIDADE --- */
+
+        /* Small devices (sm, 576px e acima) */
+        @media (min-width: 576px) {
+            .slogan {
+                font-size: 1.5rem; /* Aumenta um pouco em telas um pouco maiores */
+            }
+        }
+
+        /* Medium devices (md, 768px e acima) - Tablets */
+        @media (min-width: 768px) {
+            .slogan {
+                font-size: 1.6rem;
+            }
+            .whatsapp-button {
+                padding: 16px 35px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Large devices (lg, 992px e acima) - Onde o layout muda para 2 colunas */
+        @media (min-width: 992px) {
+            .slogan {
+                font-size: 1.7rem;
+            }
+            .hero-image {
+                max-height: 80vh; /* Reduz a altura máxima no desktop para melhor enquadramento */
+            }
+        }
+        
+        /* Extra large devices (xl, 1200px e acima) - Desktops maiores */
+        @media (min-width: 1200px) {
+            .slogan {
+                font-size: 1.8rem; /* Aumenta ainda mais em telas bem largas */
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="row full-height-row align-items-center">
+        <div class="row full-height-row align-items-center py-5 py-lg-0">
             
-            <div class="col-lg-6 text-center order-lg-1">
+            <div class="col-lg-6 text-center">
                 <img src="img/marina.png" alt="Foto de Marina Isidora, videomaker" class="hero-image img-fluid">
             </div>
 
-            <div class="col-lg-6 text-center text-lg-start p-4 order-lg-2">
+            <div class="col-lg-6 text-center text-lg-start p-3 p-lg-5">
                 <p class="slogan">
                     Pronta para transmitir sentimentos, é só me chamar no WhatsApp!
                 </p>
@@ -98,7 +138,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // JavaScript para configurar o link do WhatsApp
         document.addEventListener('DOMContentLoaded', function() {
             const phoneNumber = '5534998669158';
             const message = encodeURIComponent('Olá, Marina! Vim pelo seu site e gostaria de saber mais sobre seu trabalho.');
