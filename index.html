@@ -28,30 +28,29 @@
             
             font-family: 'Montserrat', sans-serif;
             color: var(--cor-verde);
-            min-height: 100vh;
         }
 
-        /* Classe que garante a altura total da tela */
-        .full-height-row {
+        /* Classe que garante a altura total da tela e centraliza o conteúdo */
+        .full-height-center {
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        /* Estilos da imagem principal */
         .hero-image {
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
             max-width: 90%;
             height: auto;
-            margin-bottom: 2rem;
+            margin-bottom: 2rem; /* Margem padrão para mobile */
         }
 
-        /* Slogan */
         .slogan {
             font-size: 1.3rem; /* Tamanho base para mobile */
             font-weight: bold;
             margin-bottom: 1.5rem;
         }
 
-        /* Botão WhatsApp */
         .whatsapp-button {
             padding: 14px 28px; /* Tamanho base para mobile */
             font-size: 1.1rem;
@@ -79,15 +78,10 @@
             vertical-align: middle;
         }
 
-        /* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
         /* Médio e grande (tablet e desktop) */
         @media (min-width: 768px) {
             .slogan {
                 font-size: 1.5rem; /* Aumenta um pouco em tablets e desktops */
-            }
-            .whatsapp-button {
-                padding: 12px 30px;
-                font-size: 1.1rem;
             }
         }
 
@@ -95,16 +89,15 @@
         @media (min-width: 992px) {
             .hero-image {
                 max-height: 80vh; 
-                margin-bottom: 0; /* Remove a margem para desktop */
+                margin-bottom: 0;
             }
         }
-        
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="row full-height-row align-items-center flex-column flex-lg-row">
+    <div class="container full-height-center">
+        <div class="row align-items-center py-5">
             
             <div class="col-12 col-lg-6 text-center">
                 <img src="img/marina.png" alt="Foto de Marina Isidora, videomaker" class="hero-image img-fluid">
