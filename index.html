@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -28,27 +28,32 @@
             
             font-family: 'Montserrat', sans-serif;
             color: var(--cor-verde);
+            min-height: 100vh;
         }
 
+        /* Classe que garante a altura total da tela */
         .full-height-row {
             min-height: 100vh;
         }
         
+        /* Estilos da imagem principal */
         .hero-image {
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-            max-height: 90vh; /* Permitir que a imagem seja um pouco maior */
+            max-width: 90%;
+            height: auto;
+            margin-bottom: 2rem;
         }
 
+        /* Slogan */
         .slogan {
-            /* Tamanho base para celulares (Extra Small - xs) */
-            font-size: 1.3rem;
+            font-size: 1.3rem; /* Tamanho base para mobile */
             font-weight: bold;
             margin-bottom: 1.5rem;
         }
 
+        /* Botão WhatsApp */
         .whatsapp-button {
-            /* Tamanho base para celulares (Extra Small - xs) */
-            padding: 14px 28px;
+            padding: 14px 28px; /* Tamanho base para mobile */
             font-size: 1.1rem;
 
             background-color: var(--cor-verde-botao);
@@ -74,55 +79,38 @@
             vertical-align: middle;
         }
 
-        /* --- MELHORIAS DE RESPONSIVIDADE --- */
-
-        /* Small devices (sm, 576px e acima) */
-        @media (min-width: 576px) {
-            .slogan {
-                font-size: 1.5rem; /* Aumenta um pouco em telas um pouco maiores */
-            }
-        }
-
-        /* Medium devices (md, 768px e acima) - Tablets */
+        /* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+        /* Médio e grande (tablet e desktop) */
         @media (min-width: 768px) {
             .slogan {
-                font-size: 1.6rem;
+                font-size: 1.5rem; /* Aumenta um pouco em tablets e desktops */
             }
             .whatsapp-button {
-                padding: 16px 35px;
-                font-size: 1.2rem;
+                padding: 12px 30px;
+                font-size: 1.1rem;
             }
         }
 
-        /* Large devices (lg, 992px e acima) - Onde o layout muda para 2 colunas */
+        /* Grande (desktop) */
         @media (min-width: 992px) {
-            .slogan {
-                font-size: 1.7rem;
-            }
             .hero-image {
-                max-height: 80vh; /* Reduz a altura máxima no desktop para melhor enquadramento */
+                max-height: 80vh; 
+                margin-bottom: 0; /* Remove a margem para desktop */
             }
         }
         
-        /* Extra large devices (xl, 1200px e acima) - Desktops maiores */
-        @media (min-width: 1200px) {
-            .slogan {
-                font-size: 1.8rem; /* Aumenta ainda mais em telas bem largas */
-            }
-        }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="row full-height-row align-items-center py-5 py-lg-0">
+        <div class="row full-height-row align-items-center flex-column flex-lg-row">
             
-            <div class="col-lg-6 text-center">
+            <div class="col-12 col-lg-6 text-center">
                 <img src="img/marina.png" alt="Foto de Marina Isidora, videomaker" class="hero-image img-fluid">
             </div>
 
-            <div class="col-lg-6 text-center text-lg-start p-3 p-lg-5">
+            <div class="col-12 col-lg-6 text-center text-lg-start p-4">
                 <p class="slogan">
                     Pronta para transmitir sentimentos, é só me chamar no WhatsApp!
                 </p>
